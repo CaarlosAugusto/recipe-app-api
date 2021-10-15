@@ -12,7 +12,7 @@ class AdminSiteTest(TestCase):
             password='password123'
         )
         self.client.force_login(self.admin_user)
-        self.user=get_user_model().objects.create_user(
+        self.user = get_user_model().objects.create_user(
             email='test@infomach.com.br',
             password="password123",
             name='Test User Full Name'
@@ -39,4 +39,3 @@ class AdminSiteTest(TestCase):
         res = self.client.get(url)
 
         self.assertEqual(res.status_code, 200)
-        
